@@ -1,21 +1,25 @@
 import { Hero } from "@/components/sections/hero";
-import { Marquee } from "@/components/sections/marquee";
-import { Manifesto } from "@/components/sections/manifesto";
-import { Works } from "@/components/sections/works";
-import { Horizontal } from "@/components/sections/horizontal";
-import { Numbers } from "@/components/sections/numbers";
-import { Footer } from "@/components/sections/footer";
+import { Credibility } from "@/components/sections/credibility";
+import { About } from "@/components/sections/about";
+import { Services } from "@/components/sections/services";
+import { CaseStudies } from "@/components/sections/case-studies";
+import { Stack } from "@/components/sections/stack";
+import { Experience } from "@/components/sections/experience";
+import { FAQ } from "@/components/sections/faq";
+import { Contact } from "@/components/sections/contact";
 
 export default function HomePage() {
   return (
     <main>
       <Hero />
-      <Marquee />
-      <Manifesto />
-      <Works />
-      <Horizontal />
-      <Numbers />
-      <Footer />
+      <Credibility />
+      <About />
+      <Services />
+      <CaseStudies />
+      <Stack />
+      <Experience />
+      <FAQ />
+      <Contact />
     </main>
   );
 }

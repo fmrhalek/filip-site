@@ -1,7 +1,7 @@
 services:
   web:
-    image: ghcr.io/fmrhalek/motion-site:latest
-    container_name: motion-site
+    image: ghcr.io/fmrhalek/filip-site:latest
+    container_name: filip-site
     restart: unless-stopped
     ports:
       - "127.0.0.1:3000:3000"

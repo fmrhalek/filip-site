@@ -1,101 +1,113 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SplitText } from "@/components/ui/split-text";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[100svh] flex-col justify-between px-6 pb-10 pt-24 md:px-12 md:pt-32">
-      {/* status bar */}
-      <motion.div
-        initial={{ opacity: 0, y: -8 }}
+    <section className="relative flex min-h-[calc(100svh-44px)] flex-col justify-between px-6 pb-10 pt-16 md:px-12 md:pb-14 md:pt-20">
+      {/* top meta */}
+      <motion.p
+        initial={{ opacity: 0, y: -4 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1.4 }}
-        className="grid grid-cols-2 items-start gap-4 font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60 md:grid-cols-4 md:text-xs"
+        transition={{ duration: 0.4, delay: 0.1 }}
+        className="text-[10px] uppercase tracking-[0.3em] text-bone/40 md:text-xs"
       >
-        <div>
-          <p className="text-ink/30">[ Index ]</p>
-          <p>Orbit Studio</p>
-        </div>
-        <div>
-          <p className="text-ink/30">[ Coords ]</p>
-          <p>50.0755° N / 14.4378° E</p>
-        </div>
-        <div className="hidden md:block">
-          <p className="text-ink/30">[ Issue ]</p>
-          <p>№ 014 — Spring 2026</p>
-        </div>
-        <div className="text-right md:text-left">
-          <p className="text-ink/30">[ Status ]</p>
-          <p className="inline-flex items-center gap-2">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
-            </span>
-            Booking Q3 / Q4
-          </p>
-        </div>
-      </motion.div>
+        Filip Mrhálek — independent platform engineer · est. 2020
+      </motion.p>
 
-      {/* MASSIVE TYPE */}
-      <div className="relative -mx-1 my-12 md:my-0">
-        <h1 className="font-display leading-[0.82] tracking-[-0.05em]">
-          <span className="block text-[22vw] md:text-[15vw]">
-            <SplitText split="char" stagger={0.035}>
-              Orbit
-            </SplitText>
-          </span>
-          <span className="block text-[22vw] italic font-light text-accent md:text-[15vw]">
-            <SplitText split="char" delay={0.25} stagger={0.035}>
-              studio
-            </SplitText>
-          </span>
-        </h1>
-        {/* tiny meta over the type */}
-        <motion.span
+      {/* identity */}
+      <div className="my-12 max-w-5xl md:my-0">
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mb-5 text-sm text-accent md:mb-7 md:text-base"
+        >
+          <span className="text-bone/30">$ </span>whoami
+        </motion.p>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="text-5xl font-bold leading-[0.95] tracking-[-0.045em] md:text-7xl lg:text-[7.5rem]"
+        >
+          Filip
+          <br />
+          Mrhálek
+          <span className="text-accent">.</span>
+        </motion.h1>
+
+        <motion.h2
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.8 }}
-          className="absolute right-0 top-2 hidden font-mono text-[10px] uppercase tracking-[0.3em] text-ink/40 md:block"
+          transition={{ duration: 0.6, delay: 0.95 }}
+          className="mt-8 text-2xl font-bold leading-tight tracking-[-0.02em] text-bone/85 md:mt-10 md:text-4xl lg:text-5xl"
         >
-          [ Vol. 01 / Type set in Fraunces ]
-        </motion.span>
-      </div>
+          Platform engineer{" "}
+          <span className="text-bone/55 italic">for hire</span>
+          <span className="text-accent">.</span>
+        </motion.h2>
 
-      {/* bottom row */}
-      <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
-        <div className="max-w-md">
-          <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-ink/40">
-            [ Mission ]
-          </p>
-          <p className="font-display text-xl leading-[1.15] text-ink/85 md:text-2xl">
-            <SplitText delay={1.0}>
-              A design studio building unforgettable digital products for brands
-              that refuse to blend in.
-            </SplitText>
-          </p>
-        </div>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 1.15 }}
+          className="mt-6 max-w-xl text-sm leading-relaxed text-bone/70 md:mt-8 md:text-base"
+        >
+          I build cloud infrastructure that product teams stop noticing. Azure-leaning,
+          Terraform-shaped, contracting out of Prague — currently with{" "}
+          <span className="text-bone/95">Packeta</span>, previously{" "}
+          <span className="text-bone/95">ČEZ</span>, Lundegaard, BOOTIQ.
+        </motion.p>
 
+        {/* CTAs */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.9 }}
-          className="flex items-end gap-6 font-mono text-[10px] uppercase tracking-[0.3em] text-ink/50"
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.4 }}
+          className="mt-10 flex flex-col gap-3 sm:flex-row md:mt-12"
         >
-          <span>Scroll</span>
-          <div className="relative h-12 w-px overflow-hidden bg-ink/15">
-            <motion.div
-              animate={{ y: ["-100%", "100%"] }}
-              transition={{
-                duration: 1.8,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute inset-0 bg-accent"
-            />
-          </div>
+          <a
+            href="mailto:filip.mrhalek@gmail.com?subject=Project%20inquiry"
+            className="group inline-flex items-center justify-center gap-3 border border-accent bg-accent px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.25em] text-graphite transition-colors hover:bg-graphite hover:text-accent md:text-xs"
+          >
+            Book a call
+            <span
+              aria-hidden
+              className="inline-block transition-transform group-hover:translate-x-1"
+            >
+              →
+            </span>
+          </a>
+          <a
+            href="#services"
+            className="group inline-flex items-center justify-center gap-3 border border-bone/25 px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.25em] text-bone/90 transition-colors hover:border-accent hover:text-accent md:text-xs"
+          >
+            See services
+            <span
+              aria-hidden
+              className="inline-block transition-transform group-hover:translate-y-0.5"
+            >
+              ↓
+            </span>
+          </a>
         </motion.div>
       </div>
+
+      {/* footer line */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 1.7 }}
+        className="flex items-end justify-between text-[10px] uppercase tracking-[0.3em] text-bone/40 md:text-xs"
+      >
+        <span>Prague — 50.0755°N · CET</span>
+        <span className="inline-flex items-center gap-2">
+          scroll
+          <span className="inline-block h-3 w-[6px] animate-blink bg-accent" />
+        </span>
+      </motion.div>
     </section>
   );
 }

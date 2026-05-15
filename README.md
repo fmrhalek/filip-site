@@ -1,52 +1,59 @@
-# Motion Site — Orbit Studio (starter)
+# filip-mrhalek-site
 
-An Awwwards-leaning marketing/portfolio site starter built with high-end motion design.
+Personal site for **Filip Mrhálek** — Platform & DevOps Engineer.
+
+## Aesthetic
+
+"Engineering field notebook." Near-black graphite (`#0B0D0F`) background, warm
+bone foreground (`#E6E2D8`), single terminal-mint accent (`#7FE3CB`). Set
+entirely in **JetBrains Mono** with a faint blueprint grid backdrop. Restrained
+motion — fade-up on viewport enter, blinking terminal cursor accents.
 
 ## Stack
 
-- **Next.js 15** (App Router) + **React 19** + **TypeScript**
-- **Tailwind CSS** for styling, with a custom palette (bone/ink/accent)
-- **Lenis** smooth scroll
-- **GSAP + ScrollTrigger** for pinned/scrubbed scroll choreography
-- **Framer Motion** for declarative animations, springs, magnetic cursor
-- **Fraunces / Instrument Sans / JetBrains Mono** via `next/font/google`
-
-## Aesthetic direction
-
-Editorial brutalism × kinetic type — warm off-white (`#F5F1EA`) with deep ink and a single acid orange accent (`#FF4A1C`), variable serif display set against mono captions. Subtle film-grain overlay throughout.
+- Next.js 15 (App Router) + React 19 + TypeScript
+- Tailwind CSS
+- Framer Motion (the only motion library — no GSAP, no Lenis)
+- `next/font/google` → JetBrains Mono
 
 ## Sections
 
-1. **Hero** — split-character reveal on load, status bar, animated scroll indicator
-2. **Marquee** — infinite ticker of capabilities (CSS keyframe)
-3. **Manifesto** — sticky-pinned word-by-word color reveal (GSAP scrub)
-4. **Works** — alternating project grid, clip-path image reveals, parallax scale
-5. **Capabilities** — horizontal scroll with GSAP pin
-6. **Numbers** — count-up stats on viewport enter
-7. **Footer** — kinetic “Let's talk”, magnetic mailto link
+1. **Hero** — terminal-prompt identity card
+2. **About** — three short paragraphs
+3. **Stack** — mono key/value grid of tech you work with
+4. **Experience** — vertical timeline (currently 1 real role + placeholder)
+5. **Selected work** — 4 case-study cards
+6. **Contact** — link list + sign-off
 
 ## Running locally
 
 ```bash
-cd ~/Work/web/motion-site
+cd ~/Work/web/filip
 npm install
-npm run dev
-# open http://localhost:3000
+npm run dev   # http://localhost:3001
 ```
 
-## Customizing
+(Port 3001 to avoid clashing with the motion-site demo on 3000.)
 
-- **Brand & copy** — search for `Orbit Studio`, `orbit.studio`, `hello@orbit.studio`
-- **Palette** — `tailwind.config.ts` (`bone`, `ink`, `accent`) and `:root` in `globals.css`
-- **Fonts** — `app/layout.tsx`
-- **Projects** — `components/sections/works.tsx` (`PROJECTS`)
-- **Manifesto text** — `components/sections/manifesto.tsx` (`TEXT`)
-- **Stats** — `components/sections/numbers.tsx` (`STATS`)
+## What you should edit
+
+| File | Edit when… |
+|---|---|
+| `components/sections/about.tsx` (`PARAS`) | You want to rewrite the intro paragraphs |
+| `components/sections/stack.tsx` (`STACK`) | You add/remove tech you actually work with |
+| `components/sections/experience.tsx` (`ROLES`) | You add your LinkedIn-style career history |
+| `components/sections/projects.tsx` (`PROJECTS`) | You want to swap in real public projects |
+| `components/sections/contact.tsx` (`LINKS`) | You add a LinkedIn URL or change your email |
+| `tailwind.config.ts` | You want to change the palette |
+| `app/layout.tsx` (`metadata`) | You want to tweak SEO title/description |
+
+## Placeholders (clearly marked)
+
+- LinkedIn URL — labeled `[ placeholder ]` in Contact
+- Pre-Packeta role — labeled `/ placeholder` in Experience
 
 ## Deployment
 
-This is a static-friendly Next.js app. Recommended host: **Vercel** (one click).
-Also works on Cloudflare Pages, Netlify, or Azure Static Web Apps.
-
-For your **Wedos** domain: add a `CNAME` (or `A`) record pointing to the host's
-target after you add the custom domain in the host's dashboard.
+This is a static-friendly Next.js app. `npx vercel` from this directory
+deploys in ~90 seconds. Then point your **Wedos** domain via CNAME to the
+Vercel target the dashboard gives you.

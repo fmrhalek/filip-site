@@ -1,30 +1,26 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./app/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-  ],
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        bone: "#F5F1EA",
-        ink: "#0A0908",
-        accent: "#FF4A1C",
+        graphite: "#0B0D0F",
+        bone: "#E6E2D8",
+        accent: "#7FE3CB",
+        dim: "rgba(230, 226, 216, 0.5)",
       },
       fontFamily: {
-        display: ["var(--font-fraunces)", "Georgia", "serif"],
-        sans: ["var(--font-instrument)", "system-ui", "sans-serif"],
-        mono: ["var(--font-jbm)", "ui-monospace", "monospace"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       keyframes: {
-        marquee: {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(-25%)" },
+        blink: {
+          "0%, 49%": { opacity: "1" },
+          "50%, 100%": { opacity: "0" },
         },
       },
       animation: {
-        marquee: "marquee 40s linear infinite",
+        blink: "blink 1.1s steps(1) infinite",
       },
     },
   },

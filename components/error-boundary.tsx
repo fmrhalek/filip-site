@@ -23,22 +23,22 @@ export class ErrorBoundary extends React.Component<
   render() {
     if (!this.state.hasError) return this.props.children;
     return (
-      <div className="flex min-h-[100svh] items-center justify-center bg-bone px-6">
-        <div className="max-w-md text-center">
-          <p className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-accent">
+      <div className="flex min-h-[100svh] items-center justify-center bg-graphite px-6">
+        <div className="max-w-md">
+          <p className="mb-4 text-[10px] uppercase tracking-[0.3em] text-accent">
             [ Error / 500 ]
           </p>
-          <h2 className="mb-6 font-display text-4xl tracking-[-0.02em]">
-            Something slipped its orbit.
+          <h2 className="mb-6 text-3xl font-bold tracking-tight">
+            something broke.
           </h2>
-          <p className="mb-8 font-sans text-sm text-ink/60">
-            {this.state.error?.message ?? "An unexpected error occurred."}
-          </p>
+          <pre className="mb-6 whitespace-pre-wrap text-xs text-bone/60">
+            {this.state.error?.message ?? "Unknown error"}
+          </pre>
           <button
             onClick={() => this.setState({ hasError: false, error: null })}
-            className="border-b border-ink pb-1 font-mono text-xs uppercase tracking-[0.3em] hover:text-accent"
+            className="border-b border-bone pb-1 text-[10px] uppercase tracking-[0.3em] hover:text-accent"
           >
-            Try again →
+            retry →
           </button>
         </div>
       </div>
